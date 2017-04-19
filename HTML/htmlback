@@ -1,0 +1,120 @@
+Htmlbackup
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>northtest1</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+
+    <link rel="stylesheet" href="../jquery/slider-pro.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../jquery/jquery.sliderPro.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+            $( '#slider' ).sliderPro({
+              width: "100%",
+              arrows: true,//矢印の有無
+              buttons: false,
+              aspectRatio: 2,
+            });
+      });
+    </script>
+
+  </head>
+  <body>
+    <div id="site-box">
+      <div id="header-area">
+        <div class="img-center">
+        </div>
+      </div>
+      <div id="body-area">
+        <div class="pic-area">
+          <div id="slider" class="slider-pro">
+            <div class="sp-slides">
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/1.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/2.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/3.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/4.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/5.jpg"/></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- メニュータブ -->
+      <div class="menu-area">
+        <div id="wrapper">
+          <div id="tab-1" name="switch"></div>
+          <div id="tab-2" name="switch"></div>
+          <div id="tab-3" name="switch"></div>
+          <ul class="tab-btn">
+            <li><a href="#tab-1">ようこそ</a></li>
+            <li><a href="#tab-2">ご宿泊</a></li>
+            <li><a href="#tab-3">アクセス</a></li>
+          </ul>
+
+          <div class="slider-contents">
+            <section>
+              <h1>
+                <span class="no-new-line">深緑の軽井沢</span>&nbsp;
+                <span class="no-new-line">澄んだ空気</span>&nbsp;
+                <span class="no-new-line">森の中の洋館</span>&nbsp;
+                <span class="no-new-line">ペンション旧軽井沢ノースアベニュー</span>
+              </h1>
+              <!-- お宿タブの説明タブリスト-->
+              <div class="slider-inner-contents">
+                <div id="inner-tab-1-1" name="switch"></div>
+                <div id="inner-tab-1-2" name="switch"></div>
+                <div id="inner-tab-1-3" name="switch"></div>
+                <div id="inner-tab-1-4" name="switch"></div>
+                <ul class="inner-tab-btn">
+                  <li><a href="#inner-tab-1-1">ロビー受付</a></li>
+                  <li><a href="#inner-tab-1-2">コテージ</a></li>
+                  <li><a href="#inner-tab-1-3">部屋タイプL</a></li>
+                  <li><a href="#inner-tab-1-4">部屋タイプS</a></li>
+                </ul>
+              </div>
+              <!--タブリストここまで-->
+
+              <!-- テスト用のラジオボタンタブ -->
+
+              <div class="sample">
+                <input name="s3" id="select1" value="1" checked="" type="radio">
+                <label for="select1">みかん</label>
+                <input name="s3" id="select2" value="2" type="radio">
+                <label for="select2">梅</label>
+                <input name="s3" id="select3" value="3" type="radio">
+                <label for="select3">ラーメン</label>
+                <input name="s3" id="select4" value="4" type="radio">
+                <label for="select4">パンダ</label>
+                <input name="s3" id="select5" value="5" type="radio">
+                <label for="select5">高野山</label>
+              </div>
+
+              <!-- テスト用のラジオボタンタブここまで -->
+
+            </section>
+            <section>
+              <h2>ペンションを選択肢の一つに。</h2>
+            </section>
+            <section>
+              <h3>洋館までのみちしるべ。</h3>
+            </section>
+          </div>
+        </div>
+      </div>
+      <!-- ここまで -->
+    </div>
+  </body>
+</html>

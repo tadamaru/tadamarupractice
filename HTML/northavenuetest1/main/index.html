@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>northtest1</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+
+    <link rel="stylesheet" href="../jquery/slider-pro.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../jquery/jquery.sliderPro.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+            $( '#slider' ).sliderPro({
+              width: "100%",
+              arrows: true,//矢印の有無
+              buttons: false,
+              aspectRatio: 2,
+            });
+      });
+
+      // 画面更新時にタブボタンの状態を取得して画面サイズを調整する
+      $(document).ready( function(){
+        var resultOne =　document.getElementById("accordion-one").checked;
+        var resultTwo =　document.getElementById("accordion-two").checked;
+        var resultThree =　document.getElementById("accordion-three").checked;
+        var resultFour =　document.getElementById("accordion-four").checked;
+        var resultFive =　document.getElementById("accordion-five").checked;
+        var resultSix =　document.getElementById("accordion-six").checked;
+        // 上部３タブの制御
+        // var resultLeft = document.getElementById("tab-facility").checked;
+        // var resultCenter = document.getElementById("tab-stay").checked;
+        var resultRight = document.getElementById("tab-access").checked;
+
+        var h = $("#wrapper").height();
+        if(resultOne == true) {
+          h+=300;
+          $("#wrapper").css("height", h + "px");
+        }
+        if(resultTwo == true) {
+          h+=300;
+          $("#wrapper").css("height", h + "px");
+        }
+        if(resultThree == true) {
+          h+=800;
+          $("#wrapper").css("height", h + "px");
+        }
+        if(resultFour == true) {
+          h+=800;
+          $("#wrapper").css("height", h + "px");
+        }
+        if(resultFive == true) {
+          h+=800;
+          $("#wrapper").css("height", h + "px");
+        }
+        if(resultSix == true) {
+          h+=400;
+          $("#wrapper").css("height", h + "px");
+        }
+
+        // 上部３タブの制御
+        // if(resultLeft == true) {
+        //
+        // }
+        // if(resultCenter == true) {
+        //
+        // }
+        if(resultRight == true) {
+          $("#wrapper").css("height", 1000 + "px");
+        }
+      });
+    </script>
+    <script>
+      // 各チェックボックスonClick時の処理
+      function resizeOne() {
+        // result=チェックボックスの状態を取得 h=wrapperの高さを取得
+        var result　=　document.getElementById("accordion-one").checked;
+        var h = $("#wrapper").height();
+        var hTabSize =300;
+        // 高さを調整
+        if(result == true){
+          $("#wrapper").css("height", h+hTabSize + "px");
+        }else if(result == false){
+          $("#wrapper").css("height", h-hTabSize + "px");
+        }
+      }
+      function resizeTwo() {
+        var result　=　document.getElementById("accordion-two").checked;
+        var h = $("#wrapper").height();
+        var hTabSize =300;
+        // 高さを調整
+        if(result == true){
+          $("#wrapper").css("height", h+hTabSize + "px");
+        }else if(result == false){
+          $("#wrapper").css("height", h-hTabSize + "px");
+        }
+      }
+      function resizeThree() {
+        var result　=　document.getElementById("accordion-three").checked;
+        var h = $("#wrapper").height();
+        var hTabSize =800;
+        // 高さを調整
+        if(result == true){
+          $("#wrapper").css("height", h+hTabSize + "px");
+        }else if(result == false){
+          $("#wrapper").css("height", h-hTabSize + "px");
+        }
+      }
+      function resizeFour() {
+        var result　=　document.getElementById("accordion-four").checked;
+        var h = $("#wrapper").height();
+        var hTabSize =800;
+        if(result == true){
+          $("#wrapper").css("height", h+hTabSize + "px");
+        }else if(result == false){
+          $("#wrapper").css("height", h-hTabSize + "px");
+        }
+      }
+      function resizeFive() {
+        var result　=　document.getElementById("accordion-five").checked;
+        var h = $("#wrapper").height();
+        var hTabSize =800;
+        if(result == true){
+          $("#wrapper").css("height", h+hTabSize + "px");
+        }else if(result == false){
+          $("#wrapper").css("height", h-hTabSize + "px");
+        }
+      }
+      function resizeSix() {
+        var result　=　document.getElementById("accordion-six").checked;
+        var h = $("#wrapper").height();
+        var hTabSize = 400;
+        if(result == true){
+          $("#wrapper").css("height", h+hTabSize + "px");
+        }else if(result == false){
+          $("#wrapper").css("height", h-hTabSize + "px");
+        }
+      }
+      // 上部３タブの制御
+      function resizeLeftButton() {
+        var result　=　document.getElementById("tab-facility").checked;
+        console.log(result);
+        if(result == true){
+          document.getElementById("accordion-four").checked = false;
+          document.getElementById("accordion-five").checked = false;;
+          document.getElementById("accordion-six").checked = false;
+
+          $("#wrapper").css("height", 280 + "px");
+          $(".map").css("height", 10 + "px");
+        }
+      }
+      function resizeCenterButton() {
+        var result　=　document.getElementById("tab-stay").checked;
+        console.log(result);
+        if(result == true){
+          document.getElementById("accordion-one").checked = false;
+          document.getElementById("accordion-two").checked = false;;
+          document.getElementById("accordion-three").checked = false;
+
+          $("#wrapper").css("height", 280 + "px");
+          $(".map").css("height", 10 + "px");
+        }
+      }
+      function resizeRightButton() {
+        var result　=　document.getElementById("tab-access").checked;
+        console.log(result);
+        if(result == true){
+          document.getElementById("accordion-one").checked = false;
+          document.getElementById("accordion-two").checked = false;;
+          document.getElementById("accordion-three").checked = false;
+          document.getElementById("accordion-four").checked = false;
+          document.getElementById("accordion-five").checked = false;;
+          document.getElementById("accordion-six").checked = false;
+
+          $("#wrapper").css("height", 800 + "px");
+        }
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <div id="site-box">
+      <div id="header-area">
+        <div class="img-center">
+        </div>
+      </div>
+      <div id="body-area">
+        <div class="pic-area">
+          <div id="slider" class="slider-pro">
+            <div class="sp-slides">
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/1.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/2.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/3.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/4.jpg"/></a>
+                </div>
+                <div class="sp-slide">
+                    <a href="#"><img class="sp-image" src="../images/5.jpg"/></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- メニュータブ -->
+      <div class="menu-area">
+        <div id="wrapper">
+          <!-- メニュータブボタン改修 -->
+          <div class="tab-switcher">
+            <section class="tab">
+              <input type="radio" id="tab-facility" name="tab-set" onclick="resizeLeftButton();" checked>
+              <label for="tab-facility">お宿</label>
+              <div class="tab-content">
+                <!-- お宿タブ -->
+                <section>
+                  <h1>
+                    <span class="no-new-line">深緑の軽井沢</span>&nbsp;
+                    <span class="no-new-line">澄んだ空気</span>&nbsp;
+                    <span class="no-new-line">森の中の洋館</span>&nbsp;
+                    <span class="no-new-line">ペンション旧軽井沢ノースアベニュー</span>
+                  </h1>
+                  <!-- お宿タブの説明アコーディオン-->
+                  <div class="accordion-wrap">
+                    <section class="accordion-item">
+                      <input type="checkbox" id="accordion-one" name="accordion-group" onclick="resizeOne();">
+                      <label for="accordion-one">ロビー受付</label>
+                      <div class="accordion-content">
+                        <div class="writing-position">
+                          <img src="../images/roby.jpg"/>
+                          <div>
+                            <dl>
+                              <dt>クラシカルロビー</dt>
+                              <dd>
+                                <p>受付を正面に見て右側には雰囲気のあるクラシカルなロビーをご用意しております。</p>
+                                <p>チェックインまでの間、町歩きでの休憩等にご利用ください。</p>
+                              </dd>
+                            <dl>
+                          </div>
+                        </div>
+                      </div><!-- .accordion-content -->
+                    </section><!-- .accordion-item -->
+
+                    <section class="accordion-item">
+                      <input type="checkbox" id="accordion-two" name="accordion-group" onclick="resizeTwo();">
+                      <label for="accordion-two">ダイニング</label>
+                      <div class="accordion-content">
+                        <div class="writing-position">
+                          <img src="../images/dining.jpg"/>
+                          <div>
+                            <dl>
+                              <dt>木漏れ日ダイニング</dt>
+                              <dd>
+                                <p>受付を正面に見て左側には光のよく届く明るいダイニングがございます。</p>
+                                <p>朝食ご提供時にご利用いただきます。</p>
+                              </dd>
+                            <dl>
+                          </div>
+                        </div>
+                      </div><!-- .accordion-content -->
+                    </section><!-- .accordion-item -->
+
+                    <section class="accordion-item">
+                      <input type="checkbox" id="accordion-three" name="accordion-group" onclick="resizeThree();">
+                      <label for="accordion-three">コテージ</label>
+                      <div class="accordion-content">
+                        <div class="writing-position">
+                          <img src="../images/cotagefront.jpg"/>
+                          <div>
+                            <dl>
+                              <dt>コテージの外観</dt>
+                              <dd>
+                                <p>本館からの渡り廊下の先にはコテージをご用意しております。</p>
+                                <p>ホテルの客室とは違い隣の部屋からの音を気にせずゆったりとお過ごしいただけます。</p>
+                              </dd>
+                            <dl>
+                          </div>
+                        </div>
+                        <div class="writing-position">
+                          <div>
+                            <dl>
+                              <dt>コテージ内観</dt>
+                              <dd>
+                                <p>通常の部屋よりも広い空間をご用意しております。</p>
+                                <p>天井も高く、質素ではありますが雰囲気のあるお部屋でございます。</p>
+                              </dd>
+                            <dl>
+                          </div>
+                          <img src="../images/cotageinside.jpg"/>
+                        </div>
+                        <div class="writing-position">
+                          <img src="../images/cotagebathroom.jpg"/>
+                          <div>
+                            <dl>
+                              <dt>コテージのお風呂</dt>
+                              <dd>
+                                <p>足の伸ばせるお風呂をご用意しております。</p>
+                                <p>段差をなるべく減らした設計となっております。</p>
+                                <p>※お風呂の窓にはブラインドを設置しております。</p>
+                                <p>お風呂とは別にこじんまりとしたベランダからも季節折々の景色をご覧いただけます。</p>
+                              </dd>
+                            <dl>
+                          </div>
+                        </div>
+                      </div><!-- .accordion-content -->
+                    </section><!-- .accordion-item -->
+                  </div><!-- .accordion-wrap -->
+                </section>
+                <!--お宿タブの説明アコーディオンここまで-->
+              </div><!-- .tab-content -->
+            </section><!-- .each-tab-contens -->
+
+            <section class="tab">
+              <input type="radio" id="tab-stay" name="tab-set" onclick="resizeCenterButton();">
+              <label for="tab-stay">御宿泊</label>
+              <div class="tab-content">
+                <section>
+                  <h2>ペンションを選択肢の一つに。</h2>
+                  <div class="accordion-wrap">
+                    <section class="accordion-item">
+                      <input type="checkbox" id="accordion-four" name="accordion-group" onclick="resizeFour();">
+                      <label for="accordion-four">お部屋タイプ</label>
+                      <div class="accordion-content">
+                        <div class="writing-position">
+                          <div>
+                            <dl>
+                              <dt>コテージタイプ</dt>
+                              <dd>
+                                <p>広さ：40㎡</p>
+                                <p>アメニティ：電気ポット、ミニ冷蔵庫</p>
+                                <p>&nbsp;広いバスルーム</p>
+                                <p>定員：2～3名</p>
+                              </dd>
+                            <dl>
+                          </div>
+                          <img src="../images/cotageinside.jpg"/>
+                        </div>
+                        <div class="writing-position">
+                          <div>
+                            <dl>
+                              <dt>本館客室　Lタイプの一例</dt>
+                              <dd>
+                                <p>広さ:30㎡</p>
+                                <P>アメニティ：電気ポット、ミニ冷蔵庫</p>
+                                <p>&nbsp;ユニットバス</p>
+                                <p>定員:2～5名</p>
+                              </dd>
+                            <dl>
+                          </div>
+                          <img src="../images/roomL.jpg"/>
+                        </div>
+                        <div class="writing-position">
+                          <div>
+                            <dl>
+                              <dt>本館客室　Sタイプの一例</dt>
+                              <dd>
+                                <p>広さ:20㎡</p>
+                                <P>アメニティ:ミニ冷蔵庫,ユニットバス</p>
+                                <p>&nbsp;※Sタイプのみ電気ポットはご用意しておりません。</p>
+                                <p>定員:2～5名</p>
+                              </dd>
+                            <dl>
+                          </div>
+                          <img src="../images/roomS.jpg"/>
+                        </div>
+                        <div class="writing-position">
+                          <div>
+                            <p>※全室、バス・トイレ・テレビ・ミニ冷蔵庫など完備。</p>
+                            <p>&nbsp;&nbsp;電気ポットは客室Sタイプにはご用意がございません。</p>
+
+                            <p>※全室、バスタオル・フェイスタオル・歯ブラシセット</p>
+                            <p>&nbsp;&nbsp;ボディーシャンプー・リンスインシャンプー</p>
+                            <p>&nbsp;&nbsp;お部屋着・スリッパ・ドライヤーをご用意しております。</p>
+                            <p>&nbsp;&nbsp;シャワーキャップ、髭剃りセットはございません。</p>
+                          </div>
+                        </div>
+                      </div><!-- .accordion-content -->
+                    </section><!-- .accordion-item -->
+
+                    <section class="accordion-item">
+                      <input type="checkbox" id="accordion-five" name="accordion-group" onclick="resizeFive();">
+                      <label for="accordion-five">宿泊料金</label>
+                      <div class="accordion-content">
+                        <div class="writing-position">
+                          <div>
+                            <!-- 料金表後で修正する -->
+                            <div id="facilities">
+                              <h3>料金表 (税別）</h3>
+                              <table border="1">
+                                <tbody>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td><b>&nbsp;通常シーズン</b></td>
+                                    <td><b>ハイシーズン</b>&nbsp;</td>
+                                    <td><b>トップシーズン</b>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font color="#660000"><b>コテージタイプ</b><BR>
+                                    (洋室　40㎡)</font></td>
+                                    <td><font color="#660000">&nbsp;<b>素泊り</b></font></td>
+                                    <td><b><font color="#660000">&nbsp;￥&nbsp;9,000<BR>
+                                    　(&nbsp;￥7,000 )</font></b></td>
+                                    <td><b><font color="#660000">&nbsp;￥11,000<BR>
+                                    　(&nbsp;￥9,000 )</font></b></td>
+                                    <td><b><font color="#660000">&nbsp;￥13,000<BR>
+                                    　(&nbsp;￥11,000)&nbsp;</font></b></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;朝食付</td>
+                                    <td>&nbsp;￥10,400<BR>　(&nbsp;￥8,400)</td>
+                                    <td>&nbsp;￥12,400<BR>　(&nbsp;￥10,400)</td>
+                                    <td>&nbsp;￥14,400<BR>　(&nbsp;￥12,400)</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font color="#660000"><b>本館</b>&nbsp;<b>Lタイプ</b><BR>
+                                    （洋室　30㎡）</font></td>
+                                    <td><font color="#660000">&nbsp;<b>素泊り</b></font></td>
+                                    <td><b><font color="#660000">&nbsp;￥7,000<BR>
+                                    　(&nbsp;￥5,000 )</font></b></td>
+                                    <td><b><font color="#660000">&nbsp;￥9,000<BR>
+                                    　(&nbsp;￥7,000 )</font></b></td>
+                                    <td><b><font color="#660000">&nbsp;&nbsp;￥10,000<BR>
+                                    　(&nbsp;￥8,000)</font></b></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;朝食付</td>
+                                    <td>&nbsp;￥8,400<BR>　(&nbsp;￥6,400 )</td>
+                                    <td>&nbsp;￥10,400<BR>　(&nbsp;￥8,400)</td>
+                                    <td>&nbsp;￥11,400<BR>　(&nbsp;￥9,400)</td>
+                                  </tr>
+                                  <tr>
+                                    <td><font color="#660000">&nbsp;<b>本館Sタイプ</b><BR>
+                                    （洋室　20㎡）</font></td>
+                                    <td><font color="#660000">&nbsp;<b>素泊り</b></font></td>
+                                    <td><b><font color="#660000">&nbsp;￥&nbsp;6,000<BR>
+                                    　(&nbsp;￥4,000)</font></b></td>
+                                    <td><b><font color="#660000">&nbsp;￥8,000<BR>
+                                    　(&nbsp;￥6,000 )</font></b></td>
+                                    <td><b><font color="#660000">&nbsp;￥9,000<BR>
+                                    　(&nbsp;￥7,000)</font></b></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;朝食付</td>
+                                    <td>&nbsp;￥7,400<BR>　(&nbsp;￥5,400)</td>
+                                    <td>&nbsp;￥9,400<BR>　(&nbsp;￥7,400)</td>
+                                    <td>&nbsp;&nbsp;￥10,400<BR>　(&nbsp;￥8,400)</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              　<font color="#cc0000"><b>大人一名様料金　（　　　）内は小学生料金　　シングルユースは別途　　消費税別途</b>
+                              </font>
+                              <hr>
+                              <p><font color="#0000ff" size="+1" style="font-size : 117%;"><B>上記料金に別途８％の消費税ご了承くださいませ。</B></font><BR>
+                              ＊　<b>通常シーズン</b> 　： 下記以外のすべての期間。　<BR>
+                              <br>
+                              ＊　<b>ハイシーズン</b> 　 ：<b>7月～10月の 連休日、ゴールデンウィーク期間　</b><BR>
+                              <b>8月のお盆期間を除く 8/１～8/27日<BR>
+                              </b><br>
+                              ＊<b>　トップシーズン</b> ： <b>8月のお盆期間 　8/10～１6日</b><BR>
+                              <BR>
+                              <br>
+                              　※　<b>ペット（小型犬）については、コテージ（離れ）の一部のみ同伴可能。1匹2,000円（税別　事前に応相談</b><BR>
+                              <br>
+                              ● キャンセルチャージについて<BR>
+                              ご宿泊日21日以内～前日　4,000円（税別）　　　ご宿泊当日　　全額承ります。<BR>
+                              <FONT color="#0000ff"><B>　<br>
+                              <br>
+                              お支払方法<br>
+                              現在チェックアウトの際、清算は現金のみとさせていただいております（カード不可)<BR>
+                              <BR>
+                              (事前の予約金は必要ございません。)</B></FONT></p>
+                              <hr>
+                            </div>
+                            <!-- 料金表後で修正するここまで -->
+                          </div>
+                        </div>
+                      </div><!-- .accordion-content -->
+                    </section><!-- .accordion-item -->
+
+                    <section class="accordion-item">
+                      <input type="checkbox" id="accordion-six" name="accordion-group" onclick="resizeSix();">
+                      <label for="accordion-six">お食事のご案内</label>
+                      <div class="accordion-content">
+                        <div class="writing-position">
+                          <img src="../images/eburikoPlate.jpg"/>
+                          <div class="map">
+                            <dl>
+                              <dt>&lt;&nbsp;ご案内&nbsp;&gt;</dt>
+                              <dd>
+                                <p>旧軽井沢ノースアベニューではご夕食付プランはございません。</p>
+                                <p>併設の”きのこフレンチレストラン eburiko(エブリコ)”をご利用ください。</p>
+                              </br>
+                              </dd>
+                            <dl>
+                            <dl>
+                              <dt>&lt;&nbsp;eburiko(エブリコ)&nbsp;&gt;</dt>
+                              <dd>
+                                <p>エブリコ公式HP：<a href="http://www.eburiko.com/">'http://www.eburiko.com/'</a></p>
+                                <p>TEL：0267-42-3033 水曜定休(夏季無休)</p>
+                                <p><エブリコ営業時間></p>
+                                <p>ランチ　：11：30～14：30</p>
+                                <p>ディナー：17：30～20：30</p>
+                              </dd>
+                            <dl>
+                          </div>
+                        </div>
+                      </div><!-- .accordion-content -->
+                    </section><!-- .accordion-item -->
+                  </div><!-- .accordion-wrap -->
+                </section>
+              </div><!-- .tab-content -->
+            </section><!-- .each-tab-contens -->
+
+            <section class="tab">
+              <input type="radio" id="tab-access" name="tab-set" onclick="resizeRightButton();">
+              <label for="tab-access">アクセス</label>
+              <div class="tab-content">
+                <section>
+                  <h3>洋館までのみちしるべ。</h3>
+                  <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.0143917108226!2d138.62718547607776!3d36.35124899401201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dd3836ff4a5fd%3A0xebbd848cb9a0f558!2z5pen6Lu95LqV5rKi44OO44O844K544Ki44OZ44OL44Ol44O8!5e0!3m2!1sja!2sjp!4v1492067246030" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
+                </section>
+              </div><!-- .tab-content -->
+            </section><!-- .each-tab-contens (3) -->
+          </div><!-- .tab-switcher -->
+
+          <!-- メニュータブボタン改修ここまで -->
+        </div>
+      </div><!-- メニュータブここまで -->
+    </div>
+  </body>
+</html>

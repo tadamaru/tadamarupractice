@@ -1,0 +1,258 @@
+cssbackup
+
+@charset "UTF-8";
+html {
+  margin: auto;
+}
+
+body{
+    padding: 0;        /* 余白の削除 */
+    width:80%;
+    margin: auto 10% auto;
+}
+
+ul {
+  font-size: 0;
+  padding: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+text-decoration: none;
+}
+
+#site-box {
+  background-color: #b45c00;
+}
+
+#header-area {
+   z-index: 9999;
+   position: fixed;            /* ヘッダーの固定 */
+   top: 0px;                   /* 位置(上0px) */
+   left: 0px;                  /* 位置(右0px) */
+   width: 80%;                /* 横幅100%　*/
+   height: 53px;
+   margin: auto 10% auto;
+   background-color: rgba(255,255,255,0.9); /* 背景色 */
+}
+
+#body-area {
+  margin: 53px auto 0px;
+  width: 80%;
+  background-color: green;
+  border: 100px;
+}
+
+#wrapper {
+  overflow: hidden;
+}
+
+.pic-area {
+  margin: auto;
+  width: 100%;
+  background-color: #cdffff;
+  border: 100px;
+}
+
+.img-center {
+  background-image: url("../images/menu_logo.gif");
+  background-repeat: no-repeat;
+  background-size: 125px;
+  margin: auto;
+  width: auto;
+  height: 53px;
+}
+
+/* menu-area slider-tab-area*/
+.menu-area {
+  height: 40px;
+  max-height: 50px;
+  background-color: #ffffff;
+}
+
+.menu-area li {
+  display: inline-block;
+  font-size: 16px;
+  height: 40px;
+  /*
+  max-height: 50px;
+  width: 33.3%;
+  text-align: center;
+  color: #2f86d6;
+  */
+}
+
+.slider-contents {
+  width: 300%;
+  height: 400px;/* 仮に高さを設定（あとで消す、消しても問題ない、） */
+  background-color: #fff;
+  transition-duration:2.0s;
+}
+
+.slider-contents section{
+  float: left;
+  width: 33.3%;
+  opacity: 0;
+  transition-duration:3.0s;
+}
+
+#tab-1:target ~ .tab-btn li [href="#tab-1"],
+#tab-2:target ~ .tab-btn li [href="#tab-2"],
+#tab-3:target ~ .tab-btn li [href="#tab-3"] {
+  background-color: #cd5c5c;
+}
+
+#tab-1:target ~ .slider-contents section:nth-child(1),
+#tab-2:target ~ .slider-contents section:nth-child(2),
+#tab-3:target ~ .slider-contents section:nth-child(3) {
+  opacity: 1;
+  background-color: #fff;
+}
+
+#tab-1:target ~ .slider-contents {
+  transform: translateX(0);
+}
+#tab-2:target ~ .slider-contents {
+  transform: translateX(-33.3%);
+}
+#tab-3:target ~ .slider-contents {
+  transform: translateX(-66.6%);
+}
+
+/* button */
+[name="switch"] {
+  display: none;
+}
+
+.tab-btn {
+  display: flex;
+  position: relative;
+  z-index: 1;
+
+}
+.tab-btn li {
+  display: table-cell;
+  width: 33.33%;
+  border-right: 1px solid #fff;
+  background-color: #20b2aa;
+  text-align: center;
+  vertical-align: middle;
+}
+.tab-btn li:last-child {
+  border-right: 0;
+}
+
+.tab-btn li a{
+  display: block;
+  cursor: pointer;
+  padding: 10px 0;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.tab-btn li a:hover {
+  background-color: rgba(205,92,92,0.5);
+}
+
+.slider-contents section h1 {
+overflow: hidden;
+}
+
+.slider-contents section h2 {
+overflow: hidden;
+}
+
+.slider-contents section h3 {
+overflow: hidden;
+}
+
+/* 中途半端な改行処置 spanで囲って使う*/
+.no-new-line {
+ display: inline-block;
+}
+
+/* 各タブ内の項目タブ*/
+.inner-tab-btn {
+  display: flex; /*フレックスの必要ある？*/
+  position: relative;
+  z-index: 1;
+}
+
+.inner-tab-btn li {
+  display: table-cell;
+  width: 25%;
+  height: 25px;
+  border-right: 1px solid #fff;
+  background-color: #20b2aa;
+  text-align: center;
+}
+
+.inner-tab-btn li a{
+  display: block;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.inner-tab-btn li a:hover {
+  background-color: rgba(205,92,92,0.5);
+}
+
+#inner-tab-1-1:target ~ .inner-tab-btn li [href="#inner-tab-1-1"],
+#inner-tab-1-2:target ~ .inner-tab-btn li [href="#inner-tab-1-2"],
+#inner-tab-1-3:target ~ .inner-tab-btn li [href="#inner-tab-1-3"] {
+  background-color: #cd5c5c;
+}
+
+#inner-tab-1-1:target ~ .slider-contents section:nth-child(1),
+#inner-tab-1-2:target ~ .slider-contents section:nth-child(2),
+#inner-tab-1-3:target ~ .slider-contents section:nth-child(3) {
+  opacity: 1;
+  background-color: #fff;
+}
+
+#inner-tab-1-1:target ~ .slider-contents {
+  transform: translateY(0);
+}
+#inner-tab-1-2:target ~ .slider-contents {
+  transform: translateY(-33.3%);
+}
+#inner-tab-1-3:target ~ .slider-contents {
+  transform: translateY(-66.6%);
+}
+
+/*<!-- テスト用のラジオボタンタブ -->*/
+.sample input{
+	display: none;
+}
+.sample label{
+	display: block;
+	float: left;
+	cursor: pointer;
+	width: 80px;
+	margin: 0;
+	padding: 12px 5px;
+	border-right: 1px solid #abb2b7;
+	background: #bdc3c7;
+	color: #555e64;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1;
+	transition: .2s;
+}
+.sample label:first-of-type{
+	border-radius: 3px 0 0 3px;
+}
+.sample label:last-of-type{
+	border-right: 0px;
+	border-radius: 0 3px 3px 0;
+}
+.sample input[type="radio"]:checked + label {
+	background-color: #a1b91d;
+	color: #fff;
+}
+
+/*<!-- テスト用のラジオボタンタブここまで -->*/
